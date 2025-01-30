@@ -7,10 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { toast } from "sonner";
+import { useToast } from "@/hooks/use-toast";
 
 export default function SignIn() {
   const router = useRouter();
+  const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -27,10 +28,23 @@ export default function SignIn() {
 
       if (error) throw error;
       
-      router.push("/dashboard");
-      toast.success("ログインしました");
+      toast({
+        title: "ログイン成功",
+        description: `${email}でログインしました`,
+        duration: 3000,
+      });
+      
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 1500);
+
     } catch (error: any) {
-      toast.error(error.message);
+      toast({
+        title: "エラー",
+        description: error.message,
+        variant: "destructive",
+        duration: 5000,
+      });
     } finally {
       setLoading(false);
     }

@@ -25,7 +25,7 @@ export default function AboutPage() {
       <section className="max-w-4xl mx-auto text-center mb-16">
         <h1 className="text-4xl font-bold mb-6 flex items-center justify-center gap-3">
           <Info className="h-8 w-8 text-primary" />
-          このサイトについて
+          このアプリについて
         </h1>
         <p className="text-xl text-muted-foreground mb-8">
           このサイトは、大学生のための過去問共有プラットフォームです。
@@ -140,7 +140,7 @@ export default function AboutPage() {
               {/* プロフィール画像 */}
               <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
                 <Image
-                  src="public/images/myImage.jpg"
+                  src="/images/myImage.jpg"
                   alt="赤嶺 紘基"
                   width={128}
                   height={128}
