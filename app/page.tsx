@@ -93,7 +93,7 @@ const StatsSection = () => {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background to-muted">
+    <main className="min-h-screen bg-gradient-to-b from-background via-background/95 to-accent/20">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
