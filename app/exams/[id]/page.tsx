@@ -14,7 +14,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ExamDetailPage({ params }: { params: { id: string } }) {
+type PageProps = {
+  params: {
+    id: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default async function ExamDetailPage({ params, searchParams }: PageProps) {
   if (!params.id) {
     return <div className="container py-16 text-center">過去問が見つかりません</div>;
   }
